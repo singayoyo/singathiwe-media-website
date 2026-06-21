@@ -4,6 +4,8 @@
 README.md
 .github
 .github/**
+deployment
+deployment/**
 
 # Static source files retained for design reference
 about.html
@@ -23,4 +25,3 @@ assets/singathiwe-media-logo-concept-3.png
 # Local build output
 dist
 dist/**
-

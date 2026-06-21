@@ -51,6 +51,8 @@ Requires a WordPress.com Business or Commerce plan.
 
 The `.deployignore` file prevents static source pages, documentation, concept art and local build files from being copied into WordPress.
 
+An optional GitHub Actions workflow is stored at `deployment/theme-check.yml.example`. Move it to `.github/workflows/theme-check.yml` after authorizing GitHub CLI with the `workflow` scope.
+
 ## Self-hosted WordPress
 
 Upload the theme ZIP or deploy the repository contents to:
@@ -68,4 +70,3 @@ The original static HTML pages remain in the repository as design references. Wo
 - White transparent wordmark: `assets/singathiwe-media-logo-wordmark.png`
 - Black transparent wordmark: `assets/singathiwe-media-logo-black.png`
 - Hero image: `assets/hero-black-female.png`
-
