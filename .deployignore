@@ -1,0 +1,26 @@
+# Repository and documentation files
+.gitignore
+.deployignore
+README.md
+.github
+.github/**
+
+# Static source files retained for design reference
+about.html
+activations.html
+creatives.html
+digital-systems.html
+generated-page.html
+index.html
+marketing.html
+
+# Unused concept/reference assets
+assets/current-logo-reference.png
+assets/singathiwe-media-logo-concept.png
+assets/singathiwe-media-logo-concept-2.png
+assets/singathiwe-media-logo-concept-3.png
+
+# Local build output
+dist
+dist/**
+

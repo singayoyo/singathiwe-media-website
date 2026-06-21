@@ -1,0 +1,44 @@
+name: WordPress Theme Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: none
+
+      - name: Lint PHP files
+        run: find . -name '*.php' -not -path './dist/*' -print0 | xargs -0 -n1 php -l
+
+      - name: Verify required theme files
+        run: test -f style.css && test -f index.php && test -f functions.php && test -f front-page.php
+
+      - name: Build installable theme ZIP
+        run: |
+          mkdir -p build/singathiwe-media/assets build/singathiwe-media/inc
+          cp style.css functions.php header.php footer.php front-page.php page.php index.php 404.php theme.json site-pages.css screenshot.png build/singathiwe-media/
+          cp inc/page-content.php build/singathiwe-media/inc/
+          cp assets/hero-black-female.png assets/singathiwe-media-logo-wordmark.png assets/singathiwe-media-logo-black.png build/singathiwe-media/assets/
+          cd build
+          zip -qr singathiwe-media-theme.zip singathiwe-media
+
+      - name: Upload theme ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: singathiwe-media-theme
+          path: build/singathiwe-media-theme.zip
+

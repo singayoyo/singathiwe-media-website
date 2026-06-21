@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        { "slug": "ink", "name": "Ink", "color": "#020617" },
+        { "slug": "paper", "name": "Paper", "color": "#f8fafc" },
+        { "slug": "signal", "name": "Signal", "color": "#38bdf8" }
+      ]
+    },
+    "layout": {
+      "contentSize": "768px",
+      "wideSize": "1280px"
+    },
+    "typography": {
+      "fluid": false
+    }
+  }
+}
+
