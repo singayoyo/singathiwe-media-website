@@ -1,6 +1,13 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home4/singathi/public_html/wp-content/themes/singathiwe-media/
+    - export DEPLOYPATH=/home4/singathi/public_html/wp-content/themes/singathiwe-media
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/rsync -av --delete --exclude='.git' --exclude='.github' --exclude='.cpanel.yml' ./ $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH/
+    - /bin/cp -R deployment $DEPLOYPATH/
+    - /bin/cp -R inc $DEPLOYPATH/
+    - /bin/cp -f *.php $DEPLOYPATH/
+    - /bin/cp -f *.html $DEPLOYPATH/
+    - /bin/cp -f *.css $DEPLOYPATH/
+    - /bin/cp -f *.png $DEPLOYPATH/
+    - /bin/cp -f theme.json $DEPLOYPATH/
